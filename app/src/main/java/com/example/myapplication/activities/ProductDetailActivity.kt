@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -25,6 +24,7 @@ import androidx.ui.graphics.Color
 import androidx.ui.graphics.vectorgraphics.VerticalGradient
 import androidx.ui.layout.*
 import androidx.ui.layout.Column
+import androidx.ui.material.Button
 import androidx.ui.material.surface.Card
 
 import androidx.ui.painting.imageFromResource
