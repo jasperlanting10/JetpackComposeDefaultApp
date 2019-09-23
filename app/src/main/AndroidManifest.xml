@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ImagePractise">
+        <activity android:name=".activities.ProductDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

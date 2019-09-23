@@ -1,46 +1,26 @@
 package com.example.myapplication.activities
 
-import android.app.ActionBar
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.compose.*
-import androidx.core.content.ContextCompat
 import androidx.ui.core.*
-import androidx.ui.core.Draw
-import androidx.ui.core.vectorgraphics.DrawVector
-import androidx.ui.core.vectorgraphics.VectorAsset
-import androidx.ui.core.vectorgraphics.compat.VectorResource
-import androidx.ui.core.vectorgraphics.compat.loadVectorResource
 import androidx.ui.foundation.Clickable
-import androidx.ui.foundation.SimpleImage
 import androidx.ui.foundation.shape.DrawShape
 import androidx.ui.foundation.shape.corner.CornerSizes
 import androidx.ui.foundation.shape.corner.RoundedCornerShape
 import androidx.ui.graphics.Color
 import androidx.ui.layout.*
-import androidx.ui.layout.Column
-import androidx.ui.material.Button
-import androidx.ui.material.MaterialTheme
 import androidx.ui.material.surface.Card
 import androidx.ui.material.themeColor
 import androidx.ui.material.themeTextStyle
 import androidx.ui.painting.Canvas
 import androidx.ui.painting.Paint
-import androidx.ui.painting.imageFromResource
-import androidx.ui.vector.VectorScope
 import com.example.myapplication.MainActivity
-import com.example.myapplication.R
-import com.example.myapplication.control.Category
 import com.example.myapplication.control.Product
-import com.example.myapplication.product.ProductViewCard
 import com.example.myapplication.sample.DummyDataProvider
 import com.example.myapplication.theme.HeinekenTheme
 
@@ -56,8 +36,8 @@ class ProductListActivity : AppCompatActivity() {
                     if (categoryName.equals(item.name) && !item.products.isNullOrEmpty()) {
                         ActionBarWidget(categoryName)
                         ProductFeed(item.products, onSelected = {
-                            Toast.makeText(getApplicationContext(),"Product clicked", Toast.LENGTH_SHORT).show();
-                            startActivity(Intent(this, ImagePractise::class.java))
+                            Toast.makeText(getApplicationContext(),"Product clicked", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, ProductDetailActivity::class.java))
                             Log.i("TAG123", "selected")
                         })
                     }

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
+import android.view.Menu
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -45,7 +46,6 @@ import com.example.myapplication.theme.HeinekenTheme
 
 class MainActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -69,9 +69,12 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun ActionBarWidget(){
         val actionBar = this.supportActionBar
-        actionBar!!.title = "Drinkies"
+
+        actionBar!!.setDisplayShowHomeEnabled(true)
         actionBar!!.setDisplayUseLogoEnabled(true)
-        actionBar!!.setIcon(R.mipmap.ic_launcher)
+
+        actionBar!!.title = "Drinkies"
+
     }
 
     @Composable
@@ -93,8 +96,7 @@ class MainActivity : AppCompatActivity() {
     @Composable
     fun ImageCard() {
 //        Card {
-            val image = imageFromResource(resources, R.mipmap.ic_drinkies_launcher)
-            SimpleImage(image)
+
 //            Log.i("TAG123", "resources: "+resources + ", "+R.drawable.ic_logo)
 //            val image = imageFromResource(resources, R.drawable.ic_launcher_foreground)
 //            SimpleImage(image)
@@ -148,9 +150,7 @@ class MainActivity : AppCompatActivity() {
                 //card can only hold one child, card is part of the surface class which defines this
                 Column {
                     Container(height = 240.dp, expanded = true){
-                        val image = imageFromResource(resources, R.mipmap.ic_drinkies_launcher)
-                        SimpleImage(image)
-//                        DrawShape(androidx.ui.foundation.shape.RectangleShape, Color.White)
+                        DrawShape(androidx.ui.foundation.shape.RectangleShape, Color.White)
                         Align(Alignment.BottomCenter) {
                             Column(
                                 mainAxisSize = FlexSize.Min,
