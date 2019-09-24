@@ -55,11 +55,11 @@ val heinekenSilver = Color(195,195,195)
 @Composable
 fun HeinekenTheme(children: @Composable() () -> Unit) {
     val colors = MaterialColors(
-        primary = heinekenWhite,
-        secondary = heinekenLightGreen,
+        primary = heinekenLightGreen,
+        secondary = heinekenWhite,
         secondaryVariant = heinekenDarkGreen,
-        error= heinekenRed,
-        surface = heinekenSilver
+        error= heinekenRed
+//        surface = heinekenSilver
 //        , onBackground = heinekenSilver
     )
 
@@ -91,6 +91,7 @@ fun HeinekenTheme(children: @Composable() () -> Unit) {
             fontSize = 16.sp),
         subtitle2 = TextStyle(fontFamily = FontFamily("RobotoCondensed"),
             fontWeight = FontWeight.w500,
+            color = Color.Black,
             fontSize = 14.sp),
         body1 = TextStyle(fontFamily = FontFamily("Eczar"),
             fontWeight = FontWeight.w700,

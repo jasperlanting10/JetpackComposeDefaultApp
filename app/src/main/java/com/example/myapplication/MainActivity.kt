@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
     fun MyApp(){
         HeinekenTheme {
             ActionBarWidget()
+
             val products = DummyDataProvider.categories
             Card(color = Color.LightGray) {
                 CategoryFeed(products, onSelected = {
@@ -91,6 +92,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ProductListActivity::class.java)
             intent.putExtra("CATEGORY", category.name)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right,R.anim.stay)
+
         }
     }
 
