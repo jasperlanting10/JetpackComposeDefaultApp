@@ -21,8 +21,10 @@ import androidx.ui.painting.Canvas
 import androidx.ui.painting.Paint
 import com.example.myapplication.MainActivity
 import com.example.myapplication.control.Product
+import com.example.myapplication.control.User
 import com.example.myapplication.sample.DummyDataProvider
 import com.example.myapplication.theme.HeinekenTheme
+import java.lang.NullPointerException
 
 class ProductListActivity : AppCompatActivity() {
 
@@ -32,13 +34,15 @@ class ProductListActivity : AppCompatActivity() {
             HeinekenTheme {
                 val intent = getIntent()
                 val categoryName = intent.getStringExtra("CATEGORY")
-                for (item in DummyDataProvider.categories) {
-                    if (categoryName.equals(item.name) && !item.products.isNullOrEmpty()) {
+                for (category in DummyDataProvider.categories) {
+                    if (categoryName.equals(category.name) && !category.products.isNullOrEmpty()) {
+                        User.getInstance().setCurrentCategory(category)
                         ActionBarWidget(categoryName)
-                        ProductFeed(item.products, onSelected = {
-                            Toast.makeText(getApplicationContext(),"Product clicked", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, ProductDetailActivity::class.java))
-                            Log.i("TAG123", "selected")
+                        ProductFeed(category.products, onSelected = {
+                            val intent = Intent(this, ProductDetailActivity::class.java)
+                            intent.putExtra("CATEGORY", categoryName)
+                            intent.putExtra("PRODUCT", it.name)
+                            startActivity(intent)
                         })
                     }
                 }
@@ -132,7 +136,16 @@ class ProductListActivity : AppCompatActivity() {
             }
         }
     }
-
+    override fun onBackPressed() {
+        try {
+            val intent = Intent(this, MainActivity::class.java)
+            User.getInstance().deleteCurrentCategory()
+            startActivity(intent)
+        } catch (e : NullPointerException){
+            Toast.makeText(applicationContext, "Whoops something went wrong", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
     @Composable
     fun DrawRec(color: Color) {
         val paint = Paint()

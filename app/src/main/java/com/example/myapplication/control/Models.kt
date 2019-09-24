@@ -1,5 +1,7 @@
 package com.example.myapplication.control
 
+import androidx.compose.State
+
 data class Category(
     val name : String,
     val image : Int,
@@ -11,6 +13,10 @@ data class Product(
     val description : String,
     val image : Int,
     val price : Double,
-    val bulletPoints : ArrayList<String>? = null,
-    var numberInShoppingBag : Int = 0
+    val bulletPoints : ArrayList<String>? = null
+)
+
+data class ShoppingBagProduct(
+    val product: Product,
+    var amount : State<Int>
 )

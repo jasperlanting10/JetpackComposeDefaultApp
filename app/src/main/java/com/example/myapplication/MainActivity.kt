@@ -41,6 +41,7 @@ import androidx.ui.vector.VectorScope
 import com.example.myapplication.activities.ProductListActivity
 import com.example.myapplication.control.Category
 import com.example.myapplication.control.Product
+import com.example.myapplication.control.User
 import com.example.myapplication.sample.DummyDataProvider
 import com.example.myapplication.theme.HeinekenTheme
 
@@ -174,6 +175,15 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val currentProducts = User.getInstance().shoppingBag
+
+        for (item in currentProducts){
+            Log.i("TAG123", "shopping bag item: "+item.product.name + ", amount: "+item.amount)
         }
     }
 }
