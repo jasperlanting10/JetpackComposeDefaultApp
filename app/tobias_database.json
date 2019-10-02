@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "363302652688",
+    "firebase_url": "https://drinkies-stage-dummydata.firebaseio.com",
+    "project_id": "drinkies-stage-dummydata",
+    "storage_bucket": "drinkies-stage-dummydata.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363302652688:android:2337f64b7a8b4c8acb7395",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363302652688-4itrsqrm79v3t1efcqircqi4vdof3226.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAajCQjTG18tAL1Kk4TXvSpNmUDwiplBTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363302652688-4itrsqrm79v3t1efcqircqi4vdof3226.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "363302652688-r9ofept9o3tktfhg5cs959on7vo60o7f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "tobiashesselink.SwiftUITesting"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
